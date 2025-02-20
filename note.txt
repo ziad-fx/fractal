@@ -1,0 +1,31 @@
+Why t_fractal fractal and Not t_fractal *fractal in main?
+When you declare t_fractal fractal in main, you’re creating an actual instance of the t_fractal structure.
+This is like saying, “I want a real toy box to play with.” The toy box exists right there in your main function,
+and you can put toys (data) into it.
+
+If you instead declared t_fractal *fractal, you’d be creating a pointer to a toy box, but you wouldn’t actually have 
+a toy box yet. It’s like saying, “I want directions to a toy box, but I don’t have the toy box itself.” You’d need to
+ create the toy box (allocate memory) before you can use it.
+
+How Does mlx_hook Work?
+When you call mlx_hook, you're telling MiniLibX:
+
+"Hey, when this specific event happens (e.g., a mouse click), call this function (handle_mouse) and pass it these arguments."
+
+MiniLibX will then:
+
+Listen for the event (e.g., mouse scroll).
+
+When the event happens, it will call handle_mouse for you.
+
+It will also pass the correct arguments to handle_mouse (e.g., button, x, y, and param).
+
+3. Where Do the Arguments Come From?
+The arguments for handle_mouse are automatically provided by MiniLibX when the event occurs. For example:
+
+button: The mouse button that was clicked (e.g., 4 for scroll up, 5 for scroll down).
+
+x, y: The coordinates of the mouse cursor when the event happened.
+
+param: The pointer you passed to mlx_hook (in this case, &data).
+
