@@ -6,7 +6,7 @@
 /*   By: zyahansa <zyahansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 10:29:44 by zyahansa          #+#    #+#             */
-/*   Updated: 2025/02/19 21:53:38 by zyahansa         ###   ########.fr       */
+/*   Updated: 2025/02/21 12:01:01 by zyahansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@
 #include <stdio.h>
 
 
-#define WITH 1500
-#define HIGHT 1500
+#define WITH 800
+#define HIGHT 800
+#define ITERATION 40
 
 typedef struct s_data
 {
@@ -41,7 +42,11 @@ typedef struct s_fractol
     double  real;
     double img;
     double  zoom;
+    double shift_x;
+    double shift_y;
     t_data data;
+    void *av1;
+    void *av2;
 }   t_fractal;
 
 //init
@@ -63,4 +68,7 @@ void    ft_rtfm(void);
 
 
 int ft_zoom(int button , int x, int y, t_fractal *fractal);
+int ft_shift(int keycode, t_fractal *fractal);
+int ft_jolia(double real, double img, void *av2, void *av3);
+
 #endif

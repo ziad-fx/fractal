@@ -6,13 +6,13 @@
 #    By: zyahansa <zyahansa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/13 19:49:21 by zyahansa          #+#    #+#              #
-#    Updated: 2025/02/19 22:55:46 by zyahansa         ###   ########.fr        #
+#    Updated: 2025/02/21 12:05:57 by zyahansa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror #-fsanitize=address -g 
-LDFLAGS = -L./minilibx-linux -lmlx_Linux -lmlx -lXext -lX11 -lm -lz
+LDFLAGS = -O3 -L./minilibx-linux -lmlx_Linux -lmlx -lXext -lX11 -lm -lz
 SRCS = main.c ft_rtfm.c ft_rendering_fractal.c ft_minilibx_stuff.c ft_movement.c
 OBJS = $(SRCS:.c=.o)
 TARGET = fractol
